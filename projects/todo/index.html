@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-600  justify-center ">
+    <h1 class="text-center text-4xl mx-2 mx-auto font-bold text-cyan-300 py-2 bg-gray-900 mt-2 w-[95%] md:w-[700px]">TODO APP</h1>
+    <main class="bg-gray-800 p-4 mx-2 w-[95%] md:w-[700px] min-h-[540px] mx-auto ">
+
+        <!-- input section -->
+        <!-- <div class="flex gap-2"> -->
+            <input type="text" id="todo_input" required autofocus class="w-full p-2 " placeholder="write something ...">
+            <!-- <button class="bg-blue-700 hover:bg-blue-900 duration-500  text-white px-4 py-1 "
+                onclick="addNow()">add</button> -->
+        <!-- </div> -->
+
+        <!-- todos section -->
+
+        <div>
+            <ul class="mt-5 text-white " id="to_do_box"></ul>
+        </div>
+
+
+
+    </main>
+
+
+    <script>
+
+            // input selector
+        const item = document.querySelector('#todo_input')
+        const toDoBox = document.querySelector('#to_do_box')
+
+
+
+        item.addEventListener(
+            "keyup",
+            function (event) {
+                if (event.key == "Enter") {
+                    console.log(this.value)
+                    addTodo(this.value)
+                    this.value = ""
+                }
+            }
+        )
+
+
+
+        const addTodo = (item) => {
+            const listItem = document.createElement("div");
+            listItem.innerHTML = `<div id="val" class="bg-gray-700 p-2 flex justify-between my-2 text-lg"> <p >${item} </p>  <p id="cross" class="cursor-pointer "><img width="1000" height="1000" src="./red-cros.jpg"  class="w-6 h-6 rounded-full " alt=""> </p>     </div>  `;
+
+            // delete logic
+            listItem.querySelector('#cross').addEventListener(
+                'click',
+                function () {
+                    listItem.remove()
+                })
+            //
+
+            // update logic
+            listItem.querySelector('#val').addEventListener(
+                "click",
+                function(){
+                    listItem.remove()
+                }
+            )
+
+
+
+            //             // update logic
+            //     listItem.querySelector('#val').addEventListener(
+            //     "click",
+            //     function () {
+            //         const todoText = this.querySelector('.todo-text').innerText;
+            //         const updatedText = prompt("Update todo:", todoText);
+            //         if (updatedText !== null) {
+            //             this.querySelector('.todo-text').innerText = updatedText;
+            //         }
+            //     }
+            // );
+
+            
+
+            toDoBox.appendChild(listItem);
+        }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200">
+    <div class="p-5 bg-gray-200">
+        <h1 class="text-4xl font-bold p-2 bg-gray-300 my-5">TODO APP</h1>
+
+        <!-- input box -->
+        <div >
+            <input type="text" name="todoinput" id="todoinput" value="132" class="w-[500px] p-2 rounded-md " placeholder="javascript">
+            <input type="submit" onclick="onsub()"  class="bg-blue-500 px-4 py-2 cursor-pointer text-white hover:bg-blue-800 duration-500 rounded-md">
+        </div>
+
+
+
+        <!-- todo list box -->
+        <div id="todos" class=" p-5  text-2xl  "> </div>
+        
+
+    </div>
+    
+<script src="./script.js"></script>
+</body>
+
+</html>
