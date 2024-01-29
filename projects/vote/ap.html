@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+
+        body{
+            padding: 10px;
+        }
+
+
+
+        ul{
+            margin: 10px;
+            background-color: bisque;
+            padding: 4px;
+          
+        }
+
+
+
+
+        /* li{
+            background-color: bisque;
+            padding: 4px;
+            margin: 10px;
+        } */
+   
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <div class="bg-gray-400 p-10 ">
+            <input type="text" placeholder="name" id="name">
+            <input type="text" placeholder="sign" name="" id="sign">
+            <input type="number" placeholder="votes" name="" id="votes">
+            <button onclick="submit()">click</button>
+        </div>
+
+
+        <!-- show data -->
+        <div id="content">
+
+        </div>
+    </main>
+
+
+    <script>
+
+        let info = JSON.parse(localStorage.getItem("candidate_data")) || [];
+
+
+        function submit() {
+            let get_name = document.getElementById('name').value;
+            let get_sign = document.getElementById('sign').value;
+            let get_votes = document.getElementById('votes').value;
+
+
+
+            info.push({ name: get_name, sign: get_sign, vote: get_votes });
+            console.log(info)
+
+            localStorage.setItem("candidate_data", JSON.stringify(info))
+
+            displayData();
+             }
+
+
+             function deleteItem(index) {
+            // Remove the item from the array at the specified index
+            info.splice(index, 1);
+            // Update localStorage with the modified array
+            localStorage.setItem("candidate_data", JSON.stringify(info));
+            // Redisplay the updated data
+            displayData();
+        }
+
+
+
+            function displayData(){
+                let db2 = JSON.parse(localStorage.getItem("candidate_data"))
+         
+                let mainElement = document.createElement('ul');
+
+
+       
+
+            db2.map((e,i) => {
+
+           
+            let nameElement = document.createElement('li');
+            let signElement = document.createElement('li');
+            let votesElement = document.createElement('li');
+            let btnElement = document.createElement('li');
+             
+            nameElement.textContent = e.name;
+            signElement.textContent = e.sign;
+            votesElement.textContent = e.vote;
+            btnElement.innerHTML =  ` <button onclick="deleteItem(${i})" class="bg-red-500 text-white px-2 py-1"> delete</button>`
+
+            mainElement.appendChild(nameElement)
+            mainElement.appendChild(signElement)
+            mainElement.appendChild(votesElement)
+            mainElement.appendChild(btnElement)
+
+            })
+        
+
+        document.getElementById("content").innerHTML = "";
+            document.getElementById("content").appendChild(mainElement);
+      
+
+        }
+  // Display data when the page loads
+  displayData();
+
+    </script>
+</body>
+
+</html>

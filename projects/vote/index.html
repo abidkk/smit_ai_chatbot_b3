@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Election 2024</title>
+</head>
+<body>
+
+<main>
+
+
+
+    <h1 class=" bg-gray-200 p-2 text-center text-4xl font-bold ">Elections 2024</h1>
+
+    <!-- form -->
+    <div class=" px-5 py-5">
+        <!-- <form action="#"> -->
+            <input id="candidate_name" type="text"  placeholder="candidate name" class="w-[20%] px-4 py-2 m-2 border border-gray-300">
+            <input id="party_name" type="text" placeholder="party name" class=" px-4 py-2 w-[40%] mx-2 border border-gray-300">
+            <input id="upload_image" type="file" placeholder="sign" class="w-[20%]">
+            <button class="bg-blue-500 hover:bg-blue-700 duration-500 px-4 py-1 text-white" onclick="submit()">Submit</button>
+        <!-- </form> -->
+    </div>
+
+
+<div id="candis" class="flex flex-wrap gap-5 px-5 justify-center">
+
+</div>
+
+
+    <!-- <button class="" onclick="addNew()">add new</button> -->
+    <div id="showData">
+    </div>
+</main>
+    
+
+
+</body>
+
+<script>
+
+    // JAVASCRIPT
+//     let info = [
+//         {candidate : "Aslam Khan", party:"Pakistan Public League", sign:"star", votes : 10},
+//         {candidate : "Adam Sultan", party:"Pakistan Progress Party", sign:"tree", votes : 30},
+//     ]
+
+
+//     console.log(info)
+
+// function addNew(){
+//     info.map((item,index)=>{
+//         console.log(item.candidate)
+//         console.log(item.party)
+//         console.log(item.sign)
+//         console.log(item.votes)
+
+//         document.getElementById("showData").innerHTML += item.candidate
+//     })  
+// }
+
+
+
+function submit(){
+
+    
+    let get_name = document.getElementById("candidate_name").value
+    let get_party = document.getElementById("party_name").value
+
+    
+
+
+    
+document.getElementById("candis").innerHTML += `
+    <div class="">
+        <div class=" bg-gray-50 border border-gray-200 w-80 flex flex-col items-center p-2 ">
+          
+            <div class=" w-full flex justify-between opacity-90">
+                <button>
+                    <img src="./edit.jpg" alt="edit" class="w-7 h-7">
+                </button>
+                <button>
+                    <img src="./cross2.png" alt="edit" class="w-8 h-8">
+                </button>
+            </div>
+
+            <p class="pb-2">Votes: <b class="text-red-500 count_value" >0</b></p>
+            <img src="./userlogo.png" alt="user" class="w-40 h-40 ">
+            <h1 class="font-bold text-2xl "> ${get_name}</h1>
+            <h2>${get_party}</h2>
+               
+            <div class="flex w-full justify-between items-center mt-2">
+                <button class="bg-blue-500 hover:bg-blue-800 duration-500 py-1 text-white text-xl w-[90%]" onclick="increase()">vote</button>
+                <button class="border border-gray-200 p-2 hover:bg-gray-200 duration-500"> <img src="./refresh.png" alt="refresh" class="w-6 h-6"  onclick="refresh()"></button>
+            </div>
+        </div>
+    </div>
+    <!--  -->`
+}
+
+    
+
+
+
+let counterValue = 0;
+        const counterElement = document.getElementById('count_value');
+
+        function updateCounter() {
+    const countElements = document.querySelectorAll('.count_value');
+    countElements.forEach(element => {
+        element.textContent = counterValue;
+    });
+}
+
+        // increase
+        function increase() {
+            counterValue++;
+            updateCounter();
+            console.log(counterValue)
+        }
+
+
+
+        // reset 
+        function refresh() {
+            console.log(counterValue)
+            counterValue = 0;
+            updateCounter();
+        }
+
+
+
+
+
+
+
+
+
+</script>
+</html>

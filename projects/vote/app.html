@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="content">
+
+    </div>
+    
+</body>
+
+<script>
+
+
+console.log("Hello world")
+
+let info = [
+    {id:1, name:"Abid", party:"asp" , sign : "star"},
+    {id:2, name:"Khan", party:"psp" , sign : "moon"},
+    {id:3, name:"Sohail", party:"dsp" , sign : "sun"},
+]
+
+
+
+console.log(info)
+
+
+console.log(info[2])
+
+
+// let setcontent = document.querySelector("#content").innerHTML = info.map((e)=>{
+//  return (
+//     // document.createElement("ul")
+//     console.log(e.sign)
+//  )
+// })
+
+
+function call(){
+    let ulElement = document.createElement("ul")
+
+    info.map((e)=>{
+        let liElement = document.createElement("li")
+        liElement.textContent = `${e.id} ${e.name} ${e.party} ${e.sign}`
+        // liElement.textContent = e.name
+
+        ulElement.appendChild(liElement)
+    })
+
+
+    document.getElementById("content").appendChild(ulElement)
+}
+
+call()
+
+
+</script>
+</html>

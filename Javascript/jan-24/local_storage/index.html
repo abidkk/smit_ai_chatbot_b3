@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Local Storage</title>
+    
+</head>
+<body>
+
+    <h1 class="text-center text-4xl font-bold text-red-500 p-4">Local Storage</h1>
+    <script>
+        // const db = localStorage.getItem('todo');
+        // localStorage.setItem('todo',10)
+
+        let colors = ["Red", "Green", "Yellow", "Yellow"]
+        localStorage.setItem("colors",colors)
+        localStorage.setItem('color2',JSON.stringify(colors))
+
+    
+
+
+        // 
+        console.log(localStorage.getItem('color2'))
+        let store = localStorage.getItem('color2')
+        console.log(JSON.parse(store))
+    </script>
+    
+</body>
+</html>
