@@ -2,6 +2,7 @@ console.log("Hello world!");
 
 const getName = document.getElementById("inputName");
 const getParty = document.getElementById("inputParty");
+let setResult = document.getElementById("compile");
 const getVote = 0;
 
 let setData = document.getElementById("dataContainer");
@@ -68,7 +69,7 @@ const submitHandler = () => {
 
 // vote handler
 let voteHandler = (index) => {
-  console.log("hello vote");
+  //   console.log("hello vote");
   candidateData[index].vote += 1;
   localStorage.setItem("candidate", JSON.stringify(candidateData));
   loopHandler();
@@ -76,20 +77,23 @@ let voteHandler = (index) => {
 
 // remove candidate
 const removeHandler = (index) => {
-//   confirm(
-//     `Are you sure you want to remove ${candidateData[index].name} from Election?`
-//   );
-  
-  if (confirm(`Are you sure you want to remove ${candidateData[index].name} from Election?`) == true) {
+  //   confirm(
+  //     `Are you sure you want to remove ${candidateData[index].name} from Election?`
+  //   );
+
+  if (
+    confirm(
+      `Are you sure you want to remove ${candidateData[index].name} from Election?`
+    ) == true
+  ) {
     candidateData.splice(index, 1);
-  console.log(candidateData);
-  localStorage.setItem("candidate", JSON.stringify(candidateData));
-  loopHandler();
+    // console.log(candidateData);
+    localStorage.setItem("candidate", JSON.stringify(candidateData));
+    loopHandler();
     // alert('deleted')
   } else {
-    alert("canclead")
+    alert("canclead");
   }
-
 };
 
 // edit candidate
@@ -99,3 +103,26 @@ const editHandler = (index) => {
 };
 
 loopHandler();
+
+// Compile Result LOgic
+function onCompile() {
+  const winner = candidateData.reduce((prev, current) => {
+    return prev.vote > current.vote ? prev : current;
+  });
+
+  if (winner.vote == 0) {
+    setResult.innerHTML = `<h1 class="text-center text-2xl text-red-500">No Vote Found </h1>`;
+  } else {
+    setResult.innerHTML = `<div class="px-2 md:px-10 flex justify-between items-center ">
+    <div class=" w-full flex flex-wrap gap-5 justify-center items-center ">
+    <div>
+        <img src="./public/pakistanLogo.png" alt="star" class="w-20 h-20">
+    </div>
+    <h1 class="bg-green-100 py-2 px-2 md:px-4 md:text-2xl">Congratulation Mr <b class="text-red-500 font-bold">${winner.name} </b> with <b class="text-red-500 font-bold"> ${winner.vote}</b> votes. from party <b class="text-red-500 font-bold">${winner.party}</b>  You are the New Prime Minister of Pakistan</h1>
+    <div>
+        <img src="./public/star.png" alt="star" class="w-10 h-10">
+    </div>
+    </div> 
+    </div>`;
+  }
+}
