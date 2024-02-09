@@ -5,6 +5,7 @@ const getParty = document.getElementById("inputParty");
 let setResult = document.getElementById("compile");
 const getVote = 0;
 
+
 let setData = document.getElementById("dataContainer");
 
 let candidateData = [];
