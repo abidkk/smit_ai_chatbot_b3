@@ -11,9 +11,63 @@
     <h1 class="text-center text-2xl font-bold text-blue-600 p-2">Weather App</h1>
     <main class="">
 
+        <section class="flex justify-center ">
+        <form action="#" class="bg-gray-200 p-4" onsubmit="onSubmit();return false">
+            <input type="text" required id="userInp" placeholder="Pakistan" class="bg-white px-4 py-2 ">
+            <button type="submit" class="">check</button>
+            <div id="out">
+
+            </div>
+        </form>
+        </section>
+
+
+        <section class="flex justify-center">
+
+            <main class="bg-gray-200 p-10">
+                <ul>
+                    <li id="temp"></li>
+                    <li id="icon" > </li>
+                    <li id="text"></li>
+                </ul>
+            </main>
+
+        </section>
+        <img src="" alt="">
+
     </main>
 
 
-<script src="./app.js"></script>
+<!-- <script src="./app.js"></script> -->
+<script>
+
+    let userVal = document.getElementById('userInp');
+    let display = document.getElementById('out')
+
+    let temperature = document.getElementById('temp');
+    let symbol = document.getElementById('icon');
+    let status = document.getElementById('text');
+
+// function onSubmit() {
+//         display.innerHTML = userVal.value
+// }
+
+async function onSubmit(){
+    let location = userVal.value;
+  let data = await fetch(`http://api.weatherapi.com/v1/current.json?key=23fcc5d639524b19b2c142225241002&q=${location}`);
+  let weatherData = await data.json();
+  console.log(weatherData)
+  display.innerHTML = weatherData.location.country;
+
+  display.innerHTML = weatherData.current.temp_c;
+  symbol.innerHTML = `<img src="${weatherData.current.condition.icon}" alt="icon" class="w-40 h-40 ">`;
+  status.innerHTML = weatherData.current.condition.text;
+  
+
+}
+
+
+
+</script>
 </body>
 </html>
