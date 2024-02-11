@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Weather App</title>
 </head>
-<body>
-    <main class="bg-gray-800 min-h-screen flex justify-center">
-        <!-- main -->
-        <div class="w-[300px] md:w-[450px] h-screen p-2 md:p-4 bg-gray-900">
 
-            <!-- Display current Weather -->
-            <section>
+<body>
+    <main class="bg-gray-800 min-h-screen flex justify-center p-2 text-white">
+
+        <div class="w-[400px] md:w-[450px] bg-gray-700 h-[550px] text-white p-2 ">
+
+            <!--01 Display current Weather -->
+            <section class="border-b border-gray-300 h-[45%]">
                 <h1 class="text-center text-xl text-blue-200 p-2" id="out">Pak</h1>
-                <ul class="text-center py-10">
-                <li class="text-center text-4xl font-bold text-white " id="temp">52</li>
-                <li id="icon" class="p-2 flex justify-center"></li>
-                 <li id="text" class="p-2 text-yellow-200"></li>
+                <ul class="text-center py-4">
+                    <li class="text-center text-4xl font-bold text-white " id="temp">52</li>
+                    <li id="icon" class="p-2 flex justify-center h-16"></li>
+                    <li id="text" class="p-2 text-yellow-200"></li>
                 </ul>
             </section>
 
-            <!-- input Section -->
-            <section class="flex justify-center ">
-            <form action="#" class="p-4" onsubmit="onSubmit();return false">
-                <input type="text" required id="userInp" placeholder="Pakistan" class="px-2 py-1 ">
-                <button type="submit" class="bg-gray-800 px-2 py-1 border border-gray-100 text-gray-400">check</button>
-                </div>
-            </form>
+            <!-- 02 input Section -->
+            <section class="border-b border-gray-300 flex justify-center items-center gap-2 h-[10%]">
+                <form action="#" onsubmit="onSubmit();return false">
+                <input type="text" id="userInp" placeholder="pakistan" class="px-2 py-1" >
+                <button type="submit" class="border border-gray-700 px-4 py-1 bg-gray-900">check</button>
+                </form>
             </section>
 
-            <!-- Display Days Section -->
-    
+            <!-- 03 Upcoming days -->
+            <section class="flex flex-wrap gap-2 justify-center text-center mt-5">
+                <!-- <div id="d1" class="bg-red-300 w-20 text-sm">Sun</div> -->
+                <div id="d2" class="bg-red-300 w-24 text-sm">Mon</div>
+                <div id="d3" class="bg-red-300 w-24 text-sm">Tue</div>
+                <div id="d4" class="bg-red-300 w-24 text-sm">Wed</div>
+                <div id="d5" class="bg-red-300 w-24 text-sm">Thu</div>
+                <div id="d6" class="bg-red-300 w-24 text-sm">Fri</div>
+                <div id="d7" class="bg-red-300 w-24 text-sm">Sat</div>
 
+            </section>
 
         </div>
+
+        <!-- main -->
+        <!-- <div class="w-[400px] md:w-[450px] min-h-screen p-2 md:p-4 bg-gray-900"> -->
+
+
+
+
+        <!-- </div> -->
     </main>
-<script src="./app.js"></script>
+    <script src="./app.js"></script>
 </body>
+
 </html>
