@@ -30,8 +30,8 @@ console.log(weatherData)
 
 
 // Setting up Current Weather
-display.innerHTML = weatherData.location.name
-temperature.innerHTML = weatherData.current.temp_c;
+display.innerHTML = ` <span> ${weatherData.location.name}</span>`;
+temperature.innerHTML = `<span class="text-6xl">&#176;</span> <span class="text-4xl font-mono"> ${weatherData.current.temp_c}</span> `;
 symbol.innerHTML = `<img src="${weatherData.current.condition.icon}" alt="icon" class="w-20 h-20 ">`;
 state.innerHTML = weatherData.current.condition.text;
 
@@ -97,12 +97,12 @@ let day7Icon = weatherData.forecast.forecastday[6].day.condition.icon;
 
 //// Setting upcoming weather
 // day1.innerHTML = dayName1
-day2.innerHTML = ` <ul class="w-20 sm:w-24 text-xs border border-gray-700 p-1 ">  <li class=" bg-gray-900">${dayName2} </li>  <li class="text-sm font-bold ">${day2Temp}</li>  <li class="h-10 w-10 mx-auto" > <img src="${day2Icon}" alt="" class=""> </li> <li>${day2Stat}</li> </ul>`
-day3.innerHTML = ` <ul class="w-20 sm:w-24 text-xs border border-gray-700 p-1 ">  <li class=" bg-gray-900">${dayName3} </li>  <li class="text-sm font-bold ">${day3Temp}</li>  <li class="h-10 w-10 mx-auto" > <img src="${day3Icon}" alt="" class=""> </li> <li>${day3Stat}</li> </ul>`
-day4.innerHTML = ` <ul class="w-20 sm:w-24 text-xs border border-gray-700 p-1 ">  <li class=" bg-gray-900">${dayName4} </li>  <li class="text-sm font-bold ">${day4Temp}</li>  <li class="h-10 w-10 mx-auto" > <img src="${day4Icon}" alt="" class=""> </li> <li>${day4Stat}</li> </ul>`
-day5.innerHTML = ` <ul class="w-20 sm:w-24 text-xs border border-gray-700 p-1 ">  <li class=" bg-gray-900">${dayName5} </li>  <li class="text-sm font-bold ">${day5Temp}</li>  <li class="h-10 w-10 mx-auto" > <img src="${day5Icon}" alt="" class=""> </li> <li>${day5Stat}</li> </ul>`
-day6.innerHTML = ` <ul class="w-20 sm:w-24 text-xs border border-gray-700 p-1 ">  <li class=" bg-gray-900">${dayName6} </li>  <li class="text-sm font-bold ">${day6Temp}</li>  <li class="h-10 w-10 mx-auto" > <img src="${day6Icon}" alt="" class=""> </li> <li>${day6Stat}</li> </ul>`
-day7.innerHTML = ` <ul class="w-20 sm:w-24 text-xs border border-gray-700 p-1 ">  <li class=" bg-gray-900">${dayName7} </li>  <li class="text-sm font-bold ">${day7Temp}</li>  <li class="h-10 w-10 mx-auto" > <img src="${day7Icon}" alt="" class=""> </li> <li>${day7Stat}</li> </ul>`
+day2.innerHTML = ` <ul class="w-20 sm:w-24 text-xs border border-gray-700 p-1 ">  <li class=" bg-gray-900">${dayName2} </li>  <li class="text-sm font-bold font-mono"><span class="text-xl">&#176;</span>${day2Temp}</li>  <li class="h-10 w-10 mx-auto" > <img src="${day2Icon}" alt="" class=""> </li> <li>${day2Stat}</li> </ul>`
+day3.innerHTML = ` <ul class="w-20 sm:w-24 text-xs border border-gray-700 p-1 ">  <li class=" bg-gray-900">${dayName3} </li>  <li class="text-sm font-bold font-mono"><span class="text-xl">&#176;</span>${day3Temp}</li>  <li class="h-10 w-10 mx-auto" > <img src="${day3Icon}" alt="" class=""> </li> <li>${day3Stat}</li> </ul>`
+day4.innerHTML = ` <ul class="w-20 sm:w-24 text-xs border border-gray-700 p-1 ">  <li class=" bg-gray-900">${dayName4} </li>  <li class="text-sm font-bold font-mono"><span class="text-xl">&#176;</span>${day4Temp}</li>  <li class="h-10 w-10 mx-auto" > <img src="${day4Icon}" alt="" class=""> </li> <li>${day4Stat}</li> </ul>`
+day5.innerHTML = ` <ul class="w-20 sm:w-24 text-xs border border-gray-700 p-1 ">  <li class=" bg-gray-900">${dayName5} </li>  <li class="text-sm font-bold font-mono"><span class="text-xl">&#176;</span>${day5Temp}</li>  <li class="h-10 w-10 mx-auto" > <img src="${day5Icon}" alt="" class=""> </li> <li>${day5Stat}</li> </ul>`
+day6.innerHTML = ` <ul class="w-20 sm:w-24 text-xs border border-gray-700 p-1 ">  <li class=" bg-gray-900">${dayName6} </li>  <li class="text-sm font-bold font-mono"><span class="text-xl">&#176;</span>${day6Temp}</li>  <li class="h-10 w-10 mx-auto" > <img src="${day6Icon}" alt="" class=""> </li> <li>${day6Stat}</li> </ul>`
+day7.innerHTML = ` <ul class="w-20 sm:w-24 text-xs border border-gray-700 p-1 ">  <li class=" bg-gray-900">${dayName7} </li>  <li class="text-sm font-bold font-mono"><span class="text-xl">&#176;</span>${day7Temp}</li>  <li class="h-10 w-10 mx-auto" > <img src="${day7Icon}" alt="" class=""> </li> <li>${day7Stat}</li> </ul>`
 
 
 }
