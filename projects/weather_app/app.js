@@ -25,7 +25,7 @@ let day7 = document.getElementById('d7');
 async function onSubmit(){
 let location = userVal.value;
 // fetching Api
-let data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=23fcc5d639524b19b2c142225241002&q=${location}&days=7`);
+let data = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=23fcc5d639524b19b2c142225241002&q=${location}&days=7`);
 let weatherData = await data.json();
 console.log(weatherData)
 
