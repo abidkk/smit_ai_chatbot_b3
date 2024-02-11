@@ -9,49 +9,41 @@
 </head>
 
 <body>
-    <main class="bg-gray-800 min-h-screen flex justify-center p-2 text-white">
+    <main class="bg-gray-900 min-h-screen flex justify-center p-2 text-white rounded-md">
 
-        <div class="w-[400px] md:w-[450px] bg-gray-700 h-[550px] text-white p-2 ">
+        <div class="w-[400px] md:w-[400px] bg-gray-800 h-[580px] text-white p-2 rounded-md">
 
             <!--01 Display current Weather -->
             <section class="border-b border-gray-300 h-[45%]">
-                <h1 class="text-center text-xl text-blue-200 p-2" id="out">Pak</h1>
+                <h1 class="text-center text-xl text-blue-200 p-2" id="out"></h1>
                 <ul class="text-center py-4">
-                    <li class="text-center text-4xl font-bold text-white " id="temp">52</li>
+                    <li class="text-center text-4xl font-bold text-white " id="temp"></li>
                     <li id="icon" class="p-2 flex justify-center h-16"></li>
-                    <li id="text" class="p-2 text-yellow-200"></li>
+                    <li id="text" class="p-2 text-yellow-200 pt-5"></li>
                 </ul>
             </section>
 
             <!-- 02 input Section -->
             <section class="border-b border-gray-300 flex justify-center items-center gap-2 h-[10%]">
                 <form action="#" onsubmit="onSubmit();return false">
-                <input type="text" id="userInp" placeholder="pakistan" class="px-2 py-1" >
+                <input type="text" id="userInp" placeholder="pakistan" class="px-2 py-1 text-gray-800" >
                 <button type="submit" class="border border-gray-700 px-4 py-1 bg-gray-900">check</button>
                 </form>
             </section>
-
+<img src="" alt="" class="">
             <!-- 03 Upcoming days -->
-            <section class="flex flex-wrap gap-2 justify-center text-center mt-5">
+            <section class="flex flex-wrap gap-1 justify-center text-center mt-5">
                 <!-- <div id="d1" class="bg-red-300 w-20 text-sm">Sun</div> -->
-                <div id="d2" class="bg-red-300 w-24 text-sm">Mon</div>
-                <div id="d3" class="bg-red-300 w-24 text-sm">Tue</div>
-                <div id="d4" class="bg-red-300 w-24 text-sm">Wed</div>
-                <div id="d5" class="bg-red-300 w-24 text-sm">Thu</div>
-                <div id="d6" class="bg-red-300 w-24 text-sm">Fri</div>
-                <div id="d7" class="bg-red-300 w-24 text-sm">Sat</div>
+                <div id="d2" ></div>
+                <div id="d3" ></div>
+                <div id="d4" ></div>
+                <div id="d5" ></div>
+                <div id="d6" ></div>
+                <div id="d7" ></div>
 
             </section>
 
         </div>
-
-        <!-- main -->
-        <!-- <div class="w-[400px] md:w-[450px] min-h-screen p-2 md:p-4 bg-gray-900"> -->
-
-
-
-
-        <!-- </div> -->
     </main>
     <script src="./app.js"></script>
 </body>
