@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login App</title>
+</head>
+
+<body>
+    <main class="p-2 md:p-10 bg-gray-100">
+        <section class="grid grid-cols-2  gap-5 ">
+
+            <!-- login section -->
+            <div>
+                <h1 class="font-bold text-2xl">Login Section</h1>
+                <form action="#" onsubmit="onLoged(); return false">
+                    <input id="usernameL" type="email" required class="px-4 py-2 border border-gray-300 "
+                        placeholder="email">
+                    <input id="userpassL" type="text" required class="px-4 py-2 border border-gray-300 "
+                        placeholder="password">
+                    <button class="bg-blue-500 px-4 py-2 rounded-md">Login</button>
+                </form>
+            </div>
+
+
+            <!-- SignUp Section -->
+            <div>
+                <h1 class="font-bold text-2xl">SignUp Section</h1>
+                <form action="#" onsubmit="onSigned(); return false">
+                    <input id="userNameS" type="text" required class="px-4 py-2 border border-gray-300 "
+                        placeholder="username">
+                    <input id="userEmailS" type="email" required class="px-4 py-2 border border-gray-300 "
+                        placeholder="email">
+                    <input id="userpassS" type="password" required class="px-4 py-2 border border-gray-300 "
+                        placeholder="password">
+                    <button class="bg-blue-500 px-4 py-2 rounded-md">Signup</button>
+                </form>
+            </div>
+
+        </section>
+
+        <h1 id="output" class="text-center text-2xl pt-10 "></h1>
+    </main>
+
+
+    <!-- Javascript -->
+    <script>
+
+        // get Signup Credential
+        let userSignName = document.getElementById('userNameS');
+        let userSignEmail = document.getElementById('userEmailS');
+        let userPassword = document.getElementById('userpassS');
+
+
+        // Get Login Credential
+
+
+        let userNameL = document.getElementById('usernameL')
+        let userPassL = document.getElementById('userpassL')
+
+        let credential = []
+
+
+        function onSigned() {
+            credential.map((newUser)=>{
+                if (userSignEmail.value == newUser.email){
+                    document.getElementById("output").innerHTML = `<h1 class="text-red-500">Email Already Exists</h1>`
+                }
+            })
+            credential.push({ username: userSignName.value, email: userSignEmail.value, password: userPassword.value })
+            // document.getElementById("output").innerHTML = `<h1 class="text-blue-500">New User Added</h1>`
+          alert("New user Added")
+            console.log("Done")
+        }
+
+
+        function onLoged() {
+
+
+            // condition in loop
+            credential.map((user)=>{
+                if(userNameL.value == user.email && userPassL.value == user.password){
+                    console.log("Welcome")
+                    document.getElementById("output").innerHTML = `Welcome <h1 class="text-blue-500 ">${user.username} </h1>`
+                }else{
+                    document.getElementById("output").innerHTML = " credential Not Found"
+                }
+            })
+
+
+        
+        //   loop in condition
+        //     if (credential.map((user)=> userNameL.value == user.username && userPassL.value == user.password )) {
+        //         console.log("welcome")
+        //     }else{
+        //         console.log("incorrect username or password")
+        //     }
+
+        }
+    </script>
+
+</body>
+
+</html>
