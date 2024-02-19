@@ -19,9 +19,7 @@ let day6 = document.getElementById('d6');
 let day7 = document.getElementById('d7');
 
 
-// get days containers
-
-
+//// get days containers
 async function onSubmit(){
 let location = userVal.value;
 // fetching Api

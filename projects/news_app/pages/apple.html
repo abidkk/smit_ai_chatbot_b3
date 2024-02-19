@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>news App</title>
+</head>
+
+<body>
+
+    <main class="bg-gray-200 min-h-screen">
+        
+        <!-- navbar -->
+        <nav class="flex px-2 md:px-10 gap-5 justify-between items-center text-lg bg-orange-200">
+            <!-- 01 Logo -->
+            <div>
+                <img src="../public/idea-633315_1280.png" alt="logo" class="w-40 h-20">
+            </div>
+
+            <!-- links -->
+            <div>
+                <ul class="flex gap-5 justify-center">
+                    <li><a href="../index.html" class="hover:underline duration-500">Home</a></li>
+                    <li><a href="./apple.html" class="hover:underline duration-500">Apple</a></li>
+                    <li><a href="./tesla.html" class="hover:underline duration-500">Tesla</a></li>
+                    <li><a href="./business.html" class="hover:underline duration-500">Business</a></li>
+                    <li><a href="./wstreet.html" class="hover:underline duration-500">wallstreet</a></li>
+                </ul>
+            </div>
+
+            <!-- icons -->
+            <div>
+                <ul class="flex gap-2 justify-center">
+                    <li><a href="/" class="hover:underline duration-500">Linkedin</a></li>
+                    <li><a href="/" class="hover:underline duration-500">Github</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="bg-black text-white text-2xl font-bold text-center font-serif p-1">
+            <h1>Apple news</h1>
+        </div>
+
+        <!-- search bar section -->
+
+        <!-- Blog section -->
+        <div id="apple_blog" class="p-2 md:p-10 grid gird-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-10  justify-center">
+
+        </div>
+<img src="" alt="">
+    </main>
+
+</body>
+
+<script>
+    let blog_box = document.getElementById('apple_blog');
+    async function getNews() {
+        // fetching Api
+        let data = await fetch(`https://newsapi.org/v2/everything?q=apple&from=2024-02-16&to=2024-02-16&sortBy=popularity&apiKey=0f4df07e058f4b4f8f18fd41abe894f2`);
+        let blogData = await data.json();
+        console.log(blogData)
+        blogData.articles.map((item,key)=>{
+            blog_box.innerHTML += `
+            <div class="bg-gray-300 p-5 "> <h1>${item.title} </h1> 
+            <p> ${item.description}</p>  
+           <div><img src="${item.urlToImage}" alt="" class="w-full h-40"> </div>  
+            </div>`
+        })
+
+    }
+
+    getNews()
+</script>
+
+</html> 

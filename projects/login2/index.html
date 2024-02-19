@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        form{
+            margin: 20px;
+            padding: 20px;
+            background-color: bisque;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+        input{
+            padding: 5px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        button{
+            font-size: 20px;
+            background-color: blue;
+            color: white;
+            padding: 5px;
+        }
+
+        #result{
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+
+    <title>Login2 App</title>
+</head>
+<body>
+
+    <div>
+        <form action="#" onsubmit="signUpHandler(); return false">
+            <h1>Sign up</h1>
+            <input type="text" placeholder="username" id="username">
+            <input type="email" placeholder="email" id="email">
+            <input type="password" placeholder="password" id="password">
+            <button type="submit()">SignUp</button>
+        </form>
+ 
+        <br>
+
+        <form action="#" onsubmit="LoginHandler(); return false">
+            <h1>Login</h1>
+            <input type="email" placeholder="email" id="email_login">
+            <input type="password" placeholder="password" id="password_login">
+            <button type="submit()">Login</button>
+        </form>
+
+
+        <div id="result">
+
+        </div>
+
+    </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
