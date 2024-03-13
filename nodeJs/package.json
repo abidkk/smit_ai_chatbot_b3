@@ -4,6 +4,7 @@
   "description": "1. Node Js is a open source Javascript run time environment that enables Javascript to run on server.\r  2. Asynchronous Behaviour",
   "main": "index.js",
   "type":"module",
+
   "scripts": {
     "start":"node app.js",
     "dev" : "node --watch app.js"
