@@ -20,3 +20,7 @@
         "dev" : "node --watch app.js"
     },
 ```
+5. Add type module ( to enable ES6 features)
+    ```
+      "type": "module",
+    ```
