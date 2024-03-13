@@ -24,3 +24,5 @@
     ```
       "type": "module",
     ```
+
+6. Modules : import/export (es5 / es6) modules
