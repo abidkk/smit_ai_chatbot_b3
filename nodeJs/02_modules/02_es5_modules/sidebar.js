@@ -1,2 +1,2 @@
-// var sidebar = "I am sidebar";
+// exports.side = "I am sidebar";
 // export default sidebar;

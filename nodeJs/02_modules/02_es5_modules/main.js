@@ -1,2 +1,2 @@
-// const sidebar = require('./sidebar')
-// console.log(sidebar.sidebar)
+// const side = require("./sidebar");
+// console.log(side.sidebar)
