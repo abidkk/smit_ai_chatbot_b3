@@ -14,7 +14,8 @@
 2. To Run Code continuously => node --watch app.js
 3. create package.json file => npm init -y
 4. create some scripts in package.json :
-    "scripts": {
+   ``` "scripts": {
         "start":"node app.js",
         "dev" : "node --watch app.js"
     },
+```
